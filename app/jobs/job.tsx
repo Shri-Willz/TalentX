@@ -26,14 +26,15 @@ export default function JobsPage() {
     { title: "Business Analyst", company: "Wipro", match: "81% Match" },
   ]);
 
-  const handleApply = (job: Job) => alert(Applied to ${job.title} at ${job.company});
+  const handleApply = (job: Job) => alert(`Applied to ${job.title} at ${job.company}`);
   const handleAuraRecommendations = () => alert("Fetching Aura's job recommendations...");
-  const handleFilter = (filter: string) => alert(Filter applied: ${filter});
+  const handleFilter = (filter: string) => alert(`Filter applied: ${filter}`);
   const handleViewAll = () => alert("Showing all jobs...");
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col items-center px-4 py-6 sm:px-6 md:px-8 lg:px-16 xl:px-32">
       <div className="w-full max-w-screen-xl relative">
+        {/* Header */}
         <div className="flex items-center justify-between mb-6">
           <h1 className="text-xl sm:text-2xl md:text-3xl font-semibold">Jobs</h1>
           <div className="flex items-center gap-4">
@@ -41,6 +42,8 @@ export default function JobsPage() {
             <User className="w-6 h-6 text-gray-400 cursor-pointer" />
           </div>
         </div>
+
+        {/* Search */}
         <div className="relative mb-6">
           <input
             type="text"
@@ -49,6 +52,8 @@ export default function JobsPage() {
           />
           <Search className="absolute left-3 top-2.5 text-gray-500 w-5 h-5 sm:top-3 md:top-4" />
         </div>
+
+        {/* Filters */}
         <div className="flex justify-around mb-6 text-sm flex-wrap gap-2">
           {["Remote", "Entry level", "Full-time"].map((filter) => (
             <button
@@ -60,6 +65,8 @@ export default function JobsPage() {
             </button>
           ))}
         </div>
+
+        {/* Aura AI Card */}
         <div className="bg-blue-600 text-white mb-6 rounded-2xl p-5 md:p-6">
           <h2 className="font-semibold text-lg sm:text-xl md:text-2xl mb-2">Meet Aura, Your AI Job Assistant</h2>
           <p className="text-sm sm:text-base md:text-lg text-blue-100 mb-3">
@@ -72,12 +79,16 @@ export default function JobsPage() {
             Get Aura's Recommendations
           </button>
         </div>
+
+        {/* Recommended Header */}
         <div className="flex justify-between items-center mb-3">
           <h2 className="text-sm sm:text-base md:text-lg text-gray-400">Recommended for you</h2>
           <button onClick={handleViewAll} className="text-blue-500 text-xs sm:text-sm md:text-base hover:underline">
             View All
           </button>
         </div>
+
+        {/* Job List */}
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-28">
           {jobs.map((job, idx) => (
             <div
@@ -98,6 +109,8 @@ export default function JobsPage() {
             </div>
           ))}
         </div>
+
+        {/* Bottom Navigation */}
         <div className="fixed bottom-0 left-0 right-0 bg-black border-t border-gray-800 flex justify-around py-3 text-sm text-gray-400 sm:text-base md:text-base">
           <div className="flex flex-col items-center cursor-pointer">
             <Home className="w-5 h-5 text-blue-500 md:w-6 md:h-6" />
