@@ -20,7 +20,6 @@ import {
     MenubarItem,
     MenubarMenu,
     MenubarSeparator,
-    MenubarShortcut,
     MenubarTrigger,
 } from "@/components/ui/menubar";
 
@@ -69,7 +68,7 @@ export default function Navbar() {
                         <MenubarTrigger>
                             <User className="text-white size-8 hover:text-accent cursor-pointer rounded-2xl bg-gray-500/30 p-2" />
                         </MenubarTrigger>
-                        <MenubarContent className="bg-background text-white border-1 border-accent/30">
+                        <MenubarContent className="bg-background text-white border border-accent/30">
                             <MenubarItem>
                                 <span>
                                     <User className="size-4 inline-block" />

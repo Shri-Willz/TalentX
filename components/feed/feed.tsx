@@ -10,6 +10,7 @@ import{
     ThumbsUp,
     ThumbsDown,
     Share,
+    Dot
 } from "lucide-react";
 import { Label } from "../ui/label";
 import {
@@ -63,9 +64,10 @@ export default function Feed() {
 
 
     return (
-        <div className="px-10 py-10 flex w-[70%] flex-col items-center">
+    <div className="flex mt-6 w-full px-10 py-10">
+        <div className=" flex w-[70%] flex-col items-center">
             <div className="w-full">
-                <Label className="w-full h-[60px] bg-background/50 border-accent/30 border-1 rounded-lg flex items-center text-text placeholder:text-text focus-within:border-accent">
+                <Label className="w-full h-[60px] bg-background/50 border-accent/30 border rounded-lg flex items-center text-text placeholder:text-text focus-within:border-accent">
                     <span className="ml-3 bg-accent/20 p-2 rounded-lg">
                         <Zap className="inline-block size-4 text-accent"/>
                     </span>
@@ -117,5 +119,22 @@ export default function Feed() {
                 ))}
             </div>
         </div>
+        <div className="w-[30%] flex flex-col items-center ml-4">
+            <div className="w-full h-[120px] p-2 pl-4 bg-background/50 border-2 border-accent/20 rounded-lg">
+                <h1 className="text-lg text-white font-semibold">
+                    Emerging Opportunites
+                </h1>
+                <p className="flex text-accent items-center text-xs">
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dot-icon lucide-dot"><circle cx="12.1" cy="12.1" r="1"/></svg>
+                    </span>
+                    Live Updates
+                </p>
+                <p className="text-text text-sm">
+                    Trending opportunities, rising companies, and careers to watch
+                </p>
+            </div>
+        </div>
+    </div>
     );
 }

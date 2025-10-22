@@ -46,7 +46,7 @@ export function SigninForm({
 
   return (
     <div className={cn("flex flex-col gap-6 border-0 bg-transparent", className)} {...props}>
-      <Card className="bg-transparent">
+      <Card className="bg-transparent border-none">
         <CardContent>
           <form onSubmit={handleLogin}>
             <div className="flex flex-col gap-6 bg-transparent border-0">
