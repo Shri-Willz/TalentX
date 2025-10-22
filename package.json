@@ -38,6 +38,6 @@
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.15",
     "tailwindcss-animate": "^1.0.7",
-    "typescript": "^5"
+    "typescript": "^5.9.3"
   }
 }
