@@ -27,10 +27,10 @@ import {
 export default function Navbar() {
 
     const navlst = [
-        { name: 'Jobs', link: '/protected/jobs', icon: Briefcase },
-        { name: 'Learn', link: '/protected/learn', icon: BookOpen },
-        { name: 'Interview', link: '/protected/interview', icon: Mic },
-        { name: 'Connections', link: '/auth/connections', icon: Users },
+        { name: 'Jobs', link: '/jobs', icon: Briefcase },
+        { name: 'Learn', link: '/learn', icon: BookOpen },
+        { name: 'Interview', link: '/interview', icon: Mic },
+        { name: 'Connections', link: '/connections', icon: Users },
         { name: 'Messages', link: '/messages', icon: Mail },
     ]
 
@@ -73,33 +73,32 @@ export default function Navbar() {
                                 <span>
                                     <User className="size-4 inline-block" />
                                 </span>
-                                Profile
+                                <Link href="/profile">Profile</Link>
                             </MenubarItem>
                             <MenubarItem>
                                 <span>
                                     <Settings className="size-4 inline-block" />
                                 </span>
-
-                                Settings
+                                <Link href="/settings">Settings</Link>
                             </MenubarItem>
                             <MenubarItem>
                                 <span>
                                     <FileText className="size-4 inline-block" />
                                 </span>
-                                Resume Maker
+                                <Link href="/resumemaker">Resume Maker</Link>
                             </MenubarItem>
                             <MenubarItem>
                                 <span>
                                     <ChartNoAxesCombined className="size-4 inline-block" />
                                 </span>
-                                Analytics
+                                <Link href="/analytics">Analytics</Link>
                             </MenubarItem>
                             <MenubarSeparator className="bg-accent/20" />
                             <MenubarItem className="text-red-600">
                                  <span>
                                     <LogOut className="size-4 inline-block" />
                                 </span>
-                                Logout
+                                <Link href="/lagout">Logout</Link>
                             </MenubarItem>
                         </MenubarContent>
                     </MenubarMenu>

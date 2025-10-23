@@ -35,7 +35,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "global.d.ts"
-, "app/resumemaker"  ],
+  ],
   "exclude": [
     "node_modules"
   ]
