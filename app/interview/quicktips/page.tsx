@@ -3,20 +3,22 @@
 import React from "react";
 import Link from "next/link";
 import { Check, ChevronLeft, Eye, Mic, BarChart2, UserCheck } from "lucide-react";
+import { LucideIcon } from "lucide-react";
 
 // Reusable InfoItem component
 const InfoItem = ({
-  icon,
+  Icon,
   title,
   description,
 }: {
-  icon: React.ReactElement;
+  Icon: LucideIcon;
   title: string;
   description: string;
+
 }) => (
   <li className="flex items-start space-x-4">
-    <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center bg-white/10 backdrop-blur-md shadow-md">
-      {React.cloneElement(icon, { size: 20, className: "text-cyan-400" })}
+    <div className="shrink-0 w-10 h-10 rounded-full flex items-center justify-center bg-white/10 backdrop-blur-md shadow-md">
+      <Icon size= {20} className="text-cyan-400" />
     </div>
     <div>
       <h3 className="font-semibold text-white">{title}</h3>
@@ -88,22 +90,22 @@ export default function QuickTipsPage() {
             </h2>
             <ul className="space-y-5">
               <InfoItem
-                icon={<Eye />}
+                Icon={ Eye }
                 title="Make eye contact"
                 description="Look at the camera when speaking, not at the screen"
               />
               <InfoItem
-                icon={<Mic />}
+                Icon={Mic}
                 title="Speak clearly and pace yourself"
                 description="Take your time to think before answering"
               />
               <InfoItem
-                icon={<BarChart2 />}
+                Icon={BarChart2}
                 title="Use the STAR method"
                 description="Situation, Task, Action, Result - structure your answers"
               />
               <InfoItem
-                icon={<UserCheck />}
+                Icon={UserCheck}
                 title="Provide specific examples"
                 description="Use real experiences with concrete outcomes"
               />

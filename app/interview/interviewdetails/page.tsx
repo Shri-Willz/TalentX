@@ -10,6 +10,7 @@ import {
   List, 
   ChevronDown 
 } from 'lucide-react';
+import { LucideIcon } from "lucide-react";
 
 interface StepperItemProps {
   number: number;
@@ -34,16 +35,16 @@ const StepperConnector: React.FC = () => (
 
 interface SelectFieldProps {
   label: string;
-  icon: ReactNode;
+  Icon: LucideIcon;
   options: string[];
   value: string;
   onChange: (event: ChangeEvent<HTMLSelectElement>) => void;
 }
 
-const SelectField: React.FC<SelectFieldProps> = ({ label, icon, options, value, onChange }) => (
+const SelectField: React.FC<SelectFieldProps> = ({ label, Icon, options, value, onChange }) => (
   <div>
     <label className="flex items-center space-x-2 text-sm font-medium text-gray-300 mb-2">
-      {React.cloneElement(icon as React.ReactElement)}
+      <Icon size={18} className="text-accent"/>
       <span>{label}</span>
     </label>
     <div className="relative">
@@ -131,21 +132,21 @@ export default function BehavioralInterviewPage() {
                             rounded-2xl p-6 sm:p-8 space-y-6 shadow-xl">
               <SelectField
                 label="Difficulty Level"
-                icon={<SlidersHorizontal />}
+                Icon={SlidersHorizontal}
                 options={difficultyOptions}
                 value={difficulty}
                 onChange={handleDifficultyChange}
               />
               <SelectField
                 label="Session Duration"
-                icon={<Clock />}
+                Icon={Clock}
                 options={durationOptions}
                 value={duration}
                 onChange={handleDurationChange}
               />
               <SelectField
                 label="Number of Questions"
-                icon={<List />}
+                Icon={List}
                 options={availableQuestionOptions}
                 value={questions}
                 onChange={handleQuestionChange}
