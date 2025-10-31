@@ -43,7 +43,7 @@ interface SelectFieldProps {
 const SelectField: React.FC<SelectFieldProps> = ({ label, icon, options, value, onChange }) => (
   <div>
     <label className="flex items-center space-x-2 text-sm font-medium text-gray-300 mb-2">
-      {React.cloneElement(icon as React.ReactElement, { size: 16 })}
+      {React.cloneElement(icon as React.ReactElement)}
       <span>{label}</span>
     </label>
     <div className="relative">
