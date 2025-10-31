@@ -109,7 +109,7 @@ export default function Feed() {
                                 <ThumbsUp className="size-5 mr-2 hover:fill-accent hover:text-white"/>
                             </div>
                             <div>
-                                <ThumbsDown className="size-5 hover:fill-red-500 relative top-[2px] hover:text-white"/>
+                                <ThumbsDown className="size-5 hover:fill-red-500 relative top-0.5 hover:text-white"/>
                             </div>
                             <div className="justify-end w-full flex">
                                 <Share className="size-5 ml-4 "/>

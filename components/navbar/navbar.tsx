@@ -37,7 +37,7 @@ export default function Navbar() {
 
 
     return (
-        <nav className="flex h-[60px] w-full bg-transparent px-10 justify-between items-center border-1 border-b-accent/40">
+        <nav className="flex h-[60px] w-full bg-transparent px-10 justify-between items-center border border-b-accent/40">
             <div className="flex items-center cursor-pointer">
                 <Link href="/protected" className="mr-10">
                     <h1 className="text-white text-2xl font-bold font-sans flex items-center">
