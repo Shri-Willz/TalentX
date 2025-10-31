@@ -1,4 +1,4 @@
-import Auth from "@/app/auth/signup/page";
+import Auth from "@/app/auth/signup/signup";
 import Link from "next/link";
 
 export default function Home() {
