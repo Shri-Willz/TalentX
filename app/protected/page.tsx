@@ -13,10 +13,11 @@ export default async function ProtectedPage() {
   }
 
   return (
-    <main className="flex min-h-screen flex-col bg-background">
-      <Navbar />
-      <Feed />
-    </main>
+
+      <main className="flex min-h-screen flex-col bg-background">
+        <Navbar />
+        <Feed />
+      </main>
       
   );
 }

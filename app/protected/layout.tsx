@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
+import Navbar from "@/components/navbar/navbar";
 
 export const metadata: Metadata = {
   title: "TalentX",
@@ -14,10 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className="bg-background">
-      <body>
-        {children}
-      </body>
-    </html> 
+    <>
+      {children}
+    </>
   );
 }
