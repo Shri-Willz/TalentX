@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { use } from "react";
 import {
     Briefcase,
     BookOpen,
@@ -22,9 +23,14 @@ import {
     MenubarSeparator,
     MenubarTrigger,
 } from "@/components/ui/menubar";
+import { Button } from "../ui/button";
+import {createClient} from "@/lib/supabase/client";
+import { useRouter } from "next/navigation";
 
 
 export default function Navbar() {
+    const supabase = createClient();
+    const router = useRouter();
 
     const navlst = [
         { name: 'Jobs', link: '/jobs', icon: Briefcase },
@@ -34,7 +40,10 @@ export default function Navbar() {
         { name: 'Messages', link: '/messages', icon: Mail },
     ]
 
-
+    const handelLagout = async () => {
+        await supabase.auth.signOut();
+        router.push("/");
+    }
 
     return (
         <nav className="flex h-[60px] w-full bg-transparent px-10 justify-between items-center border border-b-accent/40">
@@ -98,7 +107,7 @@ export default function Navbar() {
                                  <span>
                                     <LogOut className="size-4 inline-block" />
                                 </span>
-                                <Link href="/lagout">Logout</Link>
+                                <Button variant="link" className="text-red-600 p-0 m-0"onClick={handelLagout}>Logout</Button>
                             </MenubarItem>
                         </MenubarContent>
                     </MenubarMenu>

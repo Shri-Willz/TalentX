@@ -21,6 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className="bg-background">
+      <head>
+        {
+          <script src="https://accounts.google.com/gsi/client" async></script>
+        }
+      </head>
       <body>
         {children}
       </body>
