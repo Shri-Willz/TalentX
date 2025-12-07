@@ -1,8 +1,11 @@
-import React from 'react'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { SigninForm } from '../../../components/signin-form'
-import { SignUpForm } from '../../../components/signup-form'
-import { Card, CardDescription, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+// app/auth/signup/signup.tsx
+"use client"; // if using useState or hooks
+
+import React from "react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { SigninForm } from '../../../components/signin-form';
+import { SignUpForm } from '../../../components/signup-form';
+import { Card, CardDescription, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function Auth() {
   return (
@@ -32,5 +35,5 @@ export default function Auth() {
         </CardContent>
       </Card>
     </div>
-  )
+  );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { createClient } from "@/lib/supabase/client";
+import { supabase } from "@/lib/supabase/client"; // ✅ Use your exported supabase client
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -26,19 +26,19 @@ export function ForgotPasswordForm({
 
   const handleForgotPassword = async (e: React.FormEvent) => {
     e.preventDefault();
-    const supabase = createClient();
     setIsLoading(true);
     setError(null);
 
     try {
-      // The url which will be included in the email. This URL needs to be configured in your redirect URLs in the Supabase dashboard at https://supabase.com/dashboard/project/_/auth/url-configuration
+      // Send password reset email via Supabase
       const { error } = await supabase.auth.resetPasswordForEmail(email, {
-        redirectTo: `${window.location.origin}/auth/update-password`,
+        redirectTo: `${window.location.origin}/auth/update-password`, // URL to reset password
       });
+
       if (error) throw error;
-      setSuccess(true);
-    } catch (error: unknown) {
-      setError(error instanceof Error ? error.message : "An error occurred");
+      setSuccess(true); // show success message
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : "An error occurred");
     } finally {
       setIsLoading(false);
     }
@@ -54,8 +54,9 @@ export function ForgotPasswordForm({
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">
-              If you registered using your email and password, you will receive
-              a password reset email.
+              If you registered using your email, you will receive a password
+              reset email shortly. Follow the link in the email to set a new
+              password.
             </p>
           </CardContent>
         </Card>
@@ -65,7 +66,7 @@ export function ForgotPasswordForm({
             <CardTitle className="text-2xl">Reset Your Password</CardTitle>
             <CardDescription>
               Type in your email and we&apos;ll send you a link to reset your
-              password
+              password.
             </CardDescription>
           </CardHeader>
           <CardContent>

@@ -1,12 +1,10 @@
-import Auth from "@/app/auth/signup/signup";
-import Link from "next/link";
+import React from "react";
+import Auth from "./auth/signup/signup"; // ✅ correct default import
 
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center">
-        {
-          <Auth />
-        }
+      <Auth />  {/* Works now */}
     </main>
   );
 }
